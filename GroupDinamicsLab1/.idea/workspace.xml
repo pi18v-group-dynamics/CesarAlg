@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98983fb9-ad2e-4210-8a5c-5d81a8546f51" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="98983fb9-ad2e-4210-8a5c-5d81a8546f51" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GroupDinamicsLab1/META-INF/GroupDinamicsLab1.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GroupDinamicsLab1/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GroupDinamicsLab1/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +21,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1Yyc1mKh33E8raXnY0S31qz5Kz6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
@@ -24,19 +34,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../ГД/Групповая динамика/GroupDinamicsLab1 — копия" />
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -77,26 +78,58 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1583918061761</updated>
+      <workItem from="1591632832531" duration="744000" />
     </task>
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1323" height="151" key="GridCell.Tab.0.bottom" timestamp="1584209578452">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="620" y="304" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1591632848510">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="620" y="304" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.824@0.0.1536.824" timestamp="1591632848510" />
+    <state x="549" y="170" key="FileChooserDialogImpl" timestamp="1591632890564">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1591632890564" />
+    <state width="1493" height="212" key="GridCell.Tab.0.bottom" timestamp="1591633556439">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1323" height="151" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584209578452" />
-    <state width="1323" height="151" key="GridCell.Tab.0.center" timestamp="1584209578452">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1493" height="212" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591633556439" />
+    <state width="1493" height="212" key="GridCell.Tab.0.center" timestamp="1591633556439">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1323" height="151" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1584209578452" />
-    <state width="1323" height="151" key="GridCell.Tab.0.left" timestamp="1584209578451">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1493" height="212" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591633556439" />
+    <state width="1493" height="212" key="GridCell.Tab.0.left" timestamp="1591633556439">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1323" height="151" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1584209578451" />
-    <state width="1323" height="151" key="GridCell.Tab.0.right" timestamp="1584209578452">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1493" height="212" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591633556439" />
+    <state width="1493" height="212" key="GridCell.Tab.0.right" timestamp="1591633556439">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1323" height="151" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1584209578452" />
+    <state width="1493" height="212" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591633556439" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1591633474249">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591633474249" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1591633474249">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1591633474249" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1591633474248">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1591633474248" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1591633474249">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1591633474249" />
     <state x="378" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1584208598781">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
