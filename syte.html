@@ -1,0 +1,59 @@
+<!DOCTYPE>
+<html>
+<title>
+	Сайт
+</title>
+<head>
+	
+</head>
+<style>
+	#contain{
+	width: 500px;
+	height: 500px;
+	background: red;
+	position: relative;
+}
+#obtain{
+	width:50;
+	height: 50;
+	background: cyan;
+	position: absolute;
+
+	}
+	</style>
+<body>
+	<div id= "contain">
+		<button id= "obtain"></button>
+	</div>
+
+</body>
+<script>
+var pos=1;
+var x = document.getElementById('obtain');
+x.addEventListener("click", click);
+var t = setInterval(move, 1);
+var down = 1;
+function move(){
+if(pos>=450||pos==0){
+	down+=5;
+	x.style.top= down+"px";
+	if(pos==450)
+	pos--;
+else if(pos==0)
+	pos++;
+}
+else{
+	if(down%2==0){
+	pos--;
+	x.style.left = pos+"px";
+	}else 
+	if(down%2!=0){
+	pos++;
+	x.style.left= pos+"px";}
+}
+}
+function click(){
+	alert("Молодчиа))");
+}
+</script>
+</html>
