@@ -23,7 +23,7 @@ import java.nio.file.Paths;
 
 
 public class Controller {
-    static char[] alfavitEn=new char[]{'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+    static char[] alfavitEn=new char[]{'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','1','2','3','4','5','6','7','8','8','9','0'};
     public TextArea TextAreaOutput;
     public TextArea TextAreaInput;
     public TextField TextFieldKey;
@@ -43,15 +43,15 @@ public class Controller {
     public void ButtonLanguage(ActionEvent actionEvent) {
         if(count){
             button1.setText("Encrypt");
-        razrab.setText("developer");
-        saveas.setText("Save As");
+        razrab.setText("Developers: ");
+        saveas.setText("Save as");
         smenitl.setText("Language");
-        colorshem.setText("Color");
+        colorshem.setText("Color Scheme");
         obzor.setText("Select");
         oprogramme.setText("About");
         rukovodstvo.setText("Guide");
-        kluch.setText("key");
-        button2.setText("Descript");
+        kluch.setText("Enter the key");
+        button2.setText("Decrypt");
         count=false;
         }else {
             button1.setText("Зашифровать");
@@ -84,7 +84,7 @@ public class Controller {
             while(alfavitEn[j]!=str[i])
                 j++;
             int n=j-Integer.parseInt(TextFieldKey.getText());
-            if(n<0)str[i]=alfavitEn[n+26];
+            if(n<0)str[i]=alfavitEn[n+alfavitEn.length];
             else if(n<alfavitEn.length)
                 str[i]=alfavitEn[n];
             j=0;
@@ -102,7 +102,7 @@ public class Controller {
             int n=j+Integer.parseInt(TextFieldKey.getText());
             if(n<alfavitEn.length)
                 str[i]=alfavitEn[n];
-            else str[i]=alfavitEn[n-26];
+            else str[i]=alfavitEn[n-alfavitEn.length];
             j=0;
         }
         TextAreaOutput.setText(String.valueOf(str));

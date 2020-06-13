@@ -24,11 +24,7 @@ public class Autorization {
 
     public void ButtonLog(ActionEvent actionEvent) throws IOException {
 
-        //FileReader fr = new FileReader("LogAndPassword");
         Scanner sc = new Scanner(new File("LogAndPassword"));
-        //BufferedReader bf = new BufferedReader(fr);
-        char[] l =new char[100];
-        //fr.read();
         String log =TFLogin.getText(),
                password = TFPassword.getText();
         String[] str1 = new String[10];
