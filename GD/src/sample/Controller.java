@@ -27,7 +27,7 @@ public class Controller {
     public TextArea TextAreaOutput;
     public TextArea TextAreaInput;
     public TextField TextFieldKey;
-<<<<<<< HEAD
+
     public Button button1;
     public Button obzor;
     public Button saveas;
@@ -71,10 +71,10 @@ public class Controller {
 
     }
 
-=======
+
     public TextArea TextAreaLog;
     public AnchorPane AnchorPaneAdmin;
->>>>>>> a68f68a0e0a1c40d4cd9ffdfae45fecc0eb02505
+
 
     public void ButtonDecrypt(ActionEvent actionEvent) {
         char[] str=TextAreaInput.getText().toLowerCase().toCharArray();
