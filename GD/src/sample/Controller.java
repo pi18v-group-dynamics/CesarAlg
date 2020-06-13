@@ -66,7 +66,7 @@ public class Controller {
     }
 
     public void ButtonHowTo(ActionEvent actionEvent) throws IOException {
-        ProcessBuilder pb = new ProcessBuilder("Notepad.exe", "C:\\Users\\HELLOFACKER\\Desktop\\CesarAlg\\GD\\src\\Руководство.txt");
+        ProcessBuilder pb = new ProcessBuilder("Notepad.exe", "Руководство.txt");
         pb.start();
     }
 
