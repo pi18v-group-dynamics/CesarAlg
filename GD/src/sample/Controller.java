@@ -3,12 +3,15 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
 public class Controller {
     static char[] alfavitEn=new char[]{'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
     public TextArea TextAreaOutput;
     public TextArea TextAreaInput;
     public TextField TextFieldKey;
+    public TextArea TextAreaLog;
+    public AnchorPane AnchorPaneAdmin;
 
     public void ButtonDecrypt(ActionEvent actionEvent) {
         char[] str=TextAreaInput.getText().toLowerCase().toCharArray();
@@ -58,6 +61,17 @@ public class Controller {
     }
 
     public void ButtonColorSheme(ActionEvent actionEvent) {
+    }
+
+    public void ButtonLogFile(ActionEvent actionEvent) {
+    }
+
+    public void ButtonLogOpen(ActionEvent actionEvent) {
+        AnchorPaneAdmin.setVisible(true);
+    }
+
+    public void ButtonBack(ActionEvent actionEvent) {
+        AnchorPaneAdmin.setVisible(false);
     }
 }
 
