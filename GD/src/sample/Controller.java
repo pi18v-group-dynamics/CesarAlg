@@ -12,6 +12,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 
+
 public class Controller {
     static char[] alfavitEn=new char[]{'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
     public TextArea TextAreaOutput;
@@ -64,7 +65,9 @@ public class Controller {
     public void ButtonAbout(ActionEvent actionEvent) {
     }
 
-    public void ButtonHowTo(ActionEvent actionEvent) {
+    public void ButtonHowTo(ActionEvent actionEvent) throws IOException {
+        ProcessBuilder pb = new ProcessBuilder("Notepad.exe", "C:\\Users\\HELLOFACKER\\Desktop\\CesarAlg\\GD\\src\\Руководство.txt");
+        pb.start();
     }
 
     public void ButtonLanguage(ActionEvent actionEvent) {
