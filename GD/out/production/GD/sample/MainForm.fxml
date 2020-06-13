@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<?import javafx.scene.control.TextField?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="627.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <SplitPane dividerPositions="0.6780141843971631" layoutY="87.0" prefHeight="599.0" prefWidth="548.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="515.0" prefWidth="194.0">
+               <children>
+                  <Button fx:id="button2" layoutX="237.0" layoutY="245.0" mnemonicParsing="false" onAction="#ButtonDecrypt" text="Расшифровать">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="button1" layoutX="100.0" layoutY="245.0" mnemonicParsing="false" onAction="#ButtonEncrypt" text="Зашифровать">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="TextFieldKey" layoutX="152.0" layoutY="210.0" prefHeight="25.0" prefWidth="31.0" />
+                  <TextArea fx:id="TextAreaInput" layoutX="42.0" layoutY="53.0" prefHeight="152.0" prefWidth="367.0" />
+                  <Label fx:id="kluch" layoutX="47.0" layoutY="212.0" prefHeight="20.0" prefWidth="100.0" text="Введите ключ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="TextAreaOutput" layoutX="42.0" layoutY="280.0" prefHeight="152.0" prefWidth="367.0" />
+                  <Button fx:id="obzor" layoutX="152.0" layoutY="14.0" mnemonicParsing="false" onAction="#ButtonSelect" prefHeight="25.0" prefWidth="117.0" text="Обзор" />
+                  <Button fx:id="saveas" layoutX="152.0" layoutY="447.0" mnemonicParsing="false" onAction="#ButtonSaveAs" prefHeight="25.0" prefWidth="117.0" text="Сохранить как" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="441.0" prefWidth="144.0">
+               <children>
+                  <Label fx:id="razrab" layoutX="14.0" layoutY="338.0" text="Разработчики: ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="45.0" layoutY="367.0" text="Трушкин М.И.&#10;Настеко И.Р.&#10;Ходарев Д.Ф.">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="oprogramme" layoutX="38.0" layoutY="177.0" mnemonicParsing="false" onAction="#ButtonAbout" prefHeight="30.0" prefWidth="122.0" text="О программе">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="rukovodstvo" layoutX="38.0" layoutY="140.0" mnemonicParsing="false" onAction="#ButtonHowTo" prefHeight="30.0" prefWidth="122.0" text="Руководство">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="smenitl" layoutX="38.0" layoutY="103.0" mnemonicParsing="false" onAction="#ButtonLanguage" prefHeight="30.0" prefWidth="122.0" text="Сменить язык">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="colorshem" layoutX="38.0" layoutY="213.0" mnemonicParsing="false" onAction="#ButtonColorSheme" text="Цветовая схема">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
