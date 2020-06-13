@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
 import javafx.scene.paint.Paint;
 
@@ -26,6 +27,7 @@ public class Controller {
     public TextArea TextAreaOutput;
     public TextArea TextAreaInput;
     public TextField TextFieldKey;
+<<<<<<< HEAD
     public Button button1;
     public Button obzor;
     public Button saveas;
@@ -69,6 +71,10 @@ public class Controller {
 
     }
 
+=======
+    public TextArea TextAreaLog;
+    public AnchorPane AnchorPaneAdmin;
+>>>>>>> a68f68a0e0a1c40d4cd9ffdfae45fecc0eb02505
 
     public void ButtonDecrypt(ActionEvent actionEvent) {
         char[] str=TextAreaInput.getText().toLowerCase().toCharArray();
@@ -132,6 +138,17 @@ public class Controller {
 
 
     public void ButtonColorSheme(ActionEvent actionEvent) {
+    }
+
+    public void ButtonLogFile(ActionEvent actionEvent) {
+    }
+
+    public void ButtonLogOpen(ActionEvent actionEvent) {
+        AnchorPaneAdmin.setVisible(true);
+    }
+
+    public void ButtonBack(ActionEvent actionEvent) {
+        AnchorPaneAdmin.setVisible(false);
     }
 }
 

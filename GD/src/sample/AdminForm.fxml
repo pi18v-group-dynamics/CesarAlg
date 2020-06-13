@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <SplitPane dividerPositions="0.6850393700787402" layoutX="-73.0" layoutY="-49.0" prefHeight="539.0" prefWidth="710.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="488.0" prefWidth="428.0">
+               <children>
+                  <Button layoutX="237.0" layoutY="245.0" mnemonicParsing="false" onAction="#ButtonDecrypt" text="Расшифровать">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="100.0" layoutY="245.0" mnemonicParsing="false" onAction="#ButtonEncrypt" text="Зашифровать">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="TextFieldKey" layoutX="152.0" layoutY="210.0" prefHeight="25.0" prefWidth="31.0" />
+                  <TextArea fx:id="TextAreaInput" layoutX="42.0" layoutY="53.0" prefHeight="152.0" prefWidth="367.0" />
+                  <Label layoutX="47.0" layoutY="212.0" prefHeight="20.0" prefWidth="100.0" text="Введите ключ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="TextAreaOutput" disable="true" layoutX="42.0" layoutY="280.0" prefHeight="152.0" prefWidth="367.0" />
+                  <Button layoutX="152.0" layoutY="14.0" mnemonicParsing="false" onAction="#ButtonSelect" prefHeight="25.0" prefWidth="117.0" text="Обзор" />
+                  <Button layoutX="83.0" layoutY="447.0" mnemonicParsing="false" onAction="#ButtonSaveAs" prefHeight="25.0" prefWidth="117.0" text="Сохранить как" />
+                  <Button layoutX="269.0" layoutY="445.0" mnemonicParsing="false" text="Копировать">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="488.0" prefWidth="247.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="338.0" text="Разработчики: ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="45.0" layoutY="367.0" text="Трушкин М.И.&#10;Настеко И.Р.&#10;Ходарев Д.Ф.">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="38.0" layoutY="177.0" mnemonicParsing="false" onAction="#ButtonAbout" prefHeight="30.0" prefWidth="122.0" text="О программе">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="38.0" layoutY="140.0" mnemonicParsing="false" onAction="#ButtonHowTo" prefHeight="30.0" prefWidth="122.0" text="Руководство">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="38.0" layoutY="103.0" mnemonicParsing="false" onAction="#ButtonLanguage" prefHeight="30.0" prefWidth="122.0" text="Сменить язык">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="38.0" layoutY="213.0" mnemonicParsing="false" onAction="#ButtonColorSheme" text="Цветовая схема">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="73.0" layoutY="30.0" mnemonicParsing="false" onAction="#ButtonLogOpen" text="Логи">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <AnchorPane fx:id="AnchorPaneAdmin" prefHeight="490.0" prefWidth="630.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TextArea fx:id="TextAreaLog" layoutX="116.0" layoutY="31.0" prefHeight="343.0" prefWidth="399.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TextArea>
+            <Button layoutX="251.0" layoutY="396.0" mnemonicParsing="false" onAction="#ButtonLogFile" text="Отобразить логи">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="30.0" layoutY="25.0" mnemonicParsing="false" onAction="#ButtonBack" text="&lt;-">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
