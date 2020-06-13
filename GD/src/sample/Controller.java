@@ -3,6 +3,14 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 
 public class Controller {
     static char[] alfavitEn=new char[]{'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
@@ -14,7 +22,7 @@ public class Controller {
         char[] str=TextAreaInput.getText().toLowerCase().toCharArray();
         int j=0;
         for(int i=0;i<TextAreaInput.getText().length();i++){
-            if(str[i]==' ') i++;
+            if(str[i]==' ' || str[i]=='\n' || str[i]=='.') i++;
             while(alfavitEn[j]!=str[i])
                 j++;
             int n=j-Integer.parseInt(TextFieldKey.getText());
@@ -30,7 +38,7 @@ public class Controller {
         char[] str=TextAreaInput.getText().toLowerCase().toCharArray();
         int j=0;
         for(int i =0;i<TextAreaInput.getText().length(); i++){
-            if(str[i]==' ') i++;
+            if(str[i]==' ' || str[i]=='\n' || str[i]=='.') i++;
             while(alfavitEn[j]!=str[i])
                 j++;
             int n=j+Integer.parseInt(TextFieldKey.getText());
@@ -42,7 +50,12 @@ public class Controller {
         TextAreaOutput.setText(String.valueOf(str));
     }
 
-    public void ButtonSelect(ActionEvent actionEvent) {
+    public void ButtonSelect(ActionEvent actionEvent) throws IOException {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Resource File");
+        File file=fileChooser.showOpenDialog(new Stage());
+        Path path = Paths.get(file.getAbsolutePath());
+        TextAreaInput.setText(new String(Files.readAllBytes(path)));
     }
 
     public void ButtonSaveAs(ActionEvent actionEvent) {
