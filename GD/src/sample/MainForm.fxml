@@ -15,31 +15,31 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="515.0" prefWidth="194.0">
                <children>
-                  <Button layoutX="237.0" layoutY="245.0" mnemonicParsing="false" onAction="#ButtonDecrypt" text="Расшифровать">
+                  <Button fx:id="button2" layoutX="237.0" layoutY="245.0" mnemonicParsing="false" onAction="#ButtonDecrypt" text="Расшифровать">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Button>
-                  <Button layoutX="100.0" layoutY="245.0" mnemonicParsing="false" onAction="#ButtonEncrypt" text="Зашифровать">
+                  <Button fx:id="button1" layoutX="100.0" layoutY="245.0" mnemonicParsing="false" onAction="#ButtonEncrypt" text="Зашифровать">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Button>
                   <TextField fx:id="TextFieldKey" layoutX="152.0" layoutY="210.0" prefHeight="25.0" prefWidth="31.0" />
                   <TextArea fx:id="TextAreaInput" layoutX="42.0" layoutY="53.0" prefHeight="152.0" prefWidth="367.0" />
-                  <Label layoutX="47.0" layoutY="212.0" prefHeight="20.0" prefWidth="100.0" text="Введите ключ">
+                  <Label fx:id="kluch" layoutX="47.0" layoutY="212.0" prefHeight="20.0" prefWidth="100.0" text="Введите ключ">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
                   <TextArea fx:id="TextAreaOutput" layoutX="42.0" layoutY="280.0" prefHeight="152.0" prefWidth="367.0" />
-                  <Button layoutX="152.0" layoutY="14.0" mnemonicParsing="false" onAction="#ButtonSelect" prefHeight="25.0" prefWidth="117.0" text="Обзор" />
-                  <Button layoutX="152.0" layoutY="447.0" mnemonicParsing="false" onAction="#ButtonSaveAs" prefHeight="25.0" prefWidth="117.0" text="Сохранить как" />
+                  <Button fx:id="obzor" layoutX="152.0" layoutY="14.0" mnemonicParsing="false" onAction="#ButtonSelect" prefHeight="25.0" prefWidth="117.0" text="Обзор" />
+                  <Button fx:id="saveas" layoutX="152.0" layoutY="447.0" mnemonicParsing="false" onAction="#ButtonSaveAs" prefHeight="25.0" prefWidth="117.0" text="Сохранить как" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="441.0" prefWidth="144.0">
                <children>
-                  <Label layoutX="14.0" layoutY="338.0" text="Разработчики: ">
+                  <Label fx:id="razrab" layoutX="14.0" layoutY="338.0" text="Разработчики: ">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -49,22 +49,22 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button layoutX="38.0" layoutY="177.0" mnemonicParsing="false" onAction="#ButtonAbout" prefHeight="30.0" prefWidth="122.0" text="О программе">
+                  <Button fx:id="oprogramme" layoutX="38.0" layoutY="177.0" mnemonicParsing="false" onAction="#ButtonAbout" prefHeight="30.0" prefWidth="122.0" text="О программе">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Button layoutX="38.0" layoutY="140.0" mnemonicParsing="false" onAction="#ButtonHowTo" prefHeight="30.0" prefWidth="122.0" text="Руководство">
+                  <Button fx:id="rukovodstvo" layoutX="38.0" layoutY="140.0" mnemonicParsing="false" onAction="#ButtonHowTo" prefHeight="30.0" prefWidth="122.0" text="Руководство">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Button layoutX="38.0" layoutY="103.0" mnemonicParsing="false" onAction="#ButtonLanguage" prefHeight="30.0" prefWidth="122.0" text="Сменить язык">
+                  <Button fx:id="smenitl" layoutX="38.0" layoutY="103.0" mnemonicParsing="false" onAction="#ButtonLanguage" prefHeight="30.0" prefWidth="122.0" text="Сменить язык">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Button layoutX="38.0" layoutY="213.0" mnemonicParsing="false" onAction="#ButtonColorSheme" text="Цветовая схема">
+                  <Button fx:id="colorshem" layoutX="38.0" layoutY="213.0" mnemonicParsing="false" onAction="#ButtonColorSheme" text="Цветовая схема">
                      <font>
                         <Font size="14.0" />
                      </font>
