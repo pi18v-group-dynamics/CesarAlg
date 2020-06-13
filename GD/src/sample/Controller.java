@@ -11,7 +11,9 @@ import javafx.scene.paint.Paint;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -105,10 +107,19 @@ public class Controller {
         fileChooser.setTitle("Open Resource File");
         File file=fileChooser.showOpenDialog(new Stage());
         Path path = Paths.get(file.getAbsolutePath());
+
         TextAreaInput.setText(new String(Files.readAllBytes(path)));
     }
 
-    public void ButtonSaveAs(ActionEvent actionEvent) {
+    public void ButtonSaveAs(ActionEvent actionEvent) throws IOException {
+        FileChooser f = new FileChooser();
+        FileChooser.ExtensionFilter extFilter =
+                new FileChooser.ExtensionFilter("DAT files (*.dat)", "*.dat");
+        f.getExtensionFilters().add(extFilter);
+        File file=f.showSaveDialog(new Stage());
+        RandomAccessFile r = new RandomAccessFile(file.getAbsolutePath(), "rw");
+        byte[] bytes= TextAreaOutput.getText().getBytes();
+        r.writeBytes(TextAreaOutput.getText());
     }
 
     public void ButtonAbout(ActionEvent actionEvent) {
