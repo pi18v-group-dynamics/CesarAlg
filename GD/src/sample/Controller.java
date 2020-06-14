@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -16,12 +17,12 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
-
+import java.util.regex.Pattern;
 
 
 public class Controller {
     static char[] alfavitEn=new char[]{'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+    static char[] alfavitRu=new char[]{'а','б','в','г','д','е','ё','ж','з','и','й','к','л','м','н','о','п','р','с','т','у','ф','х','ц','ч','ш','щ','ъ','ы','ь','э','ю','я'};
     public TextArea TextAreaOutput;
     public TextArea TextAreaInput;
     public TextField TextFieldKey;
@@ -37,7 +38,22 @@ public class Controller {
     public Button smenitl;
     public Button button2;
     public Button copy;
+    public AnchorPane mainPane;
+    public AnchorPane pane2;
+    public AnchorPane pane1;
+    public Button log;
+    public Button Exit;
     private boolean count = true;
+    private boolean countPain=true;
+
+    @FXML
+    private void method(){
+
+        Pattern p = Pattern.compile("[0-9]*");
+        TextFieldKey.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!p.matcher(newValue).matches()) TextFieldKey.setText(oldValue);
+        });
+    }
 
     public void ButtonLanguage(ActionEvent actionEvent) {
         if(count){
@@ -52,6 +68,8 @@ public class Controller {
         kluch.setText("Enter the key");
         button2.setText("Decrypt");
         copy.setText("Copy");
+Exit.setText("Exit");
+        log.setText("Logs");
         count=false;
         }else {
             button1.setText("Зашифровать");
@@ -65,6 +83,8 @@ public class Controller {
             rukovodstvo.setText("Руководство");
             kluch.setText("Введите ключ");
             copy.setText("Копировать");
+            log.setText("Логи");
+            Exit.setText("Выход");
             count=true;
         }
 
@@ -146,6 +166,23 @@ public class Controller {
 
 
     public void ButtonColorSheme(ActionEvent actionEvent) {
+        if (countPain){
+            mainPane.getStylesheets().clear();
+            pane1.setStyle("-fx-background-color: #2C2B2C");
+
+            pane2.setStyle("-fx-background-color: #2C2B2C");
+
+            mainPane.getStylesheets().add("style.css");
+            countPain=false;
+        }else{
+            pane1.setStyle("-fx-background-color: #F5F4F6");
+
+            pane2.setStyle("-fx-background-color: #F5F4F6");
+
+            mainPane.getStylesheets().clear();
+
+            countPain=true;
+        }
     }
 
     public void ButtonLogFile(ActionEvent actionEvent) {
@@ -160,6 +197,10 @@ public class Controller {
     }
 
     public void ButtonCopy(ActionEvent actionEvent) {
+    }
+
+    public void ButtonExit(ActionEvent event) {
+        ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
     }
 }
 

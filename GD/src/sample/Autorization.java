@@ -8,6 +8,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -80,6 +81,7 @@ public class Autorization {
         stage.setTitle("Шифровка");
         stage.setScene(new Scene(root, 630, 490));
         stage.setResizable(false);
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
         }
 }
