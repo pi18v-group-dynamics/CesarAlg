@@ -15,12 +15,12 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="488.0" prefWidth="428.0">
                <children>
-                  <Button layoutX="237.0" layoutY="245.0" mnemonicParsing="false" onAction="#ButtonDecrypt" text="Расшифровать">
+                  <Button layoutX="237.0" layoutY="245.0" mnemonicParsing="false" onAction="#ButtonDecrypt" prefHeight="29.0" prefWidth="110.0" text="Расшифровать">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Button>
-                  <Button layoutX="100.0" layoutY="245.0" mnemonicParsing="false" onAction="#ButtonEncrypt" text="Зашифровать">
+                  <Button layoutX="100.0" layoutY="245.0" mnemonicParsing="false" onAction="#ButtonEncrypt" prefHeight="29.0" prefWidth="110.0" text="Зашифровать">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -35,7 +35,7 @@
                   <TextArea fx:id="TextAreaOutput" disable="true" layoutX="42.0" layoutY="280.0" prefHeight="152.0" prefWidth="367.0" />
                   <Button layoutX="152.0" layoutY="14.0" mnemonicParsing="false" onAction="#ButtonSelect" prefHeight="25.0" prefWidth="117.0" text="Обзор" />
                   <Button layoutX="83.0" layoutY="447.0" mnemonicParsing="false" onAction="#ButtonSaveAs" prefHeight="25.0" prefWidth="117.0" text="Сохранить как" />
-                  <Button layoutX="269.0" layoutY="445.0" mnemonicParsing="false" text="Копировать">
+                  <Button layoutX="269.0" layoutY="445.0" mnemonicParsing="false" onAction="#ButtonCopy" prefHeight="23.0" prefWidth="117.0"  text="Копировать">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -69,7 +69,7 @@
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Button layoutX="38.0" layoutY="213.0" mnemonicParsing="false" onAction="#ButtonColorSheme" text="Цветовая схема">
+                  <Button layoutX="38.0" layoutY="213.0" mnemonicParsing="false" onAction="#ButtonColorSheme" prefHeight="30.0" prefWidth="122.0" text="Цветовая схема">
                      <font>
                         <Font size="14.0" />
                      </font>

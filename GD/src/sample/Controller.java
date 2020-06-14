@@ -11,10 +11,8 @@ import javafx.scene.paint.Paint;
 
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.RandomAccessFile;
+
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -23,7 +21,7 @@ import java.nio.file.Paths;
 
 
 public class Controller {
-    static char[] alfavitEn=new char[]{'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','1','2','3','4','5','6','7','8','8','9','0'};
+    static char[] alfavitEn=new char[]{'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
     public TextArea TextAreaOutput;
     public TextArea TextAreaInput;
     public TextField TextFieldKey;
@@ -38,6 +36,7 @@ public class Controller {
     public Button colorshem;
     public Button smenitl;
     public Button button2;
+    public Button copy;
     private boolean count = true;
 
     public void ButtonLanguage(ActionEvent actionEvent) {
@@ -52,6 +51,7 @@ public class Controller {
         rukovodstvo.setText("Guide");
         kluch.setText("Enter the key");
         button2.setText("Decrypt");
+        copy.setText("Copy");
         count=false;
         }else {
             button1.setText("Зашифровать");
@@ -64,7 +64,7 @@ public class Controller {
             oprogramme.setText("О программе");
             rukovodstvo.setText("Руководство");
             kluch.setText("Введите ключ");
-
+            copy.setText("Копировать");
             count=true;
         }
 
@@ -76,7 +76,15 @@ public class Controller {
     public AnchorPane AnchorPaneAdmin;
 
 
-    public void ButtonDecrypt(ActionEvent actionEvent) {
+    public void ButtonDecrypt(ActionEvent actionEvent) throws IOException{
+        if(TextFieldKey.getText().isEmpty())
+        { FileWriter fw = new FileWriter("Взлом.txt");
+            //fw.write(var);
+            fw.flush();
+            fw.close();
+            ProcessBuilder pb = new ProcessBuilder("Notepad.exe", "Взлом.txt");
+            pb.start();
+       }else{
         char[] str=TextAreaInput.getText().toLowerCase().toCharArray();
         int j=0;
         for(int i=0;i<TextAreaInput.getText().length();i++){
@@ -87,9 +95,9 @@ public class Controller {
             if(n<0)str[i]=alfavitEn[n+alfavitEn.length];
             else if(n<alfavitEn.length)
                 str[i]=alfavitEn[n];
-            j=0;
-        }
+            j=0;}
         TextAreaOutput.setText(String.valueOf(str));
+    }
     }
 
     public void ButtonEncrypt(ActionEvent actionEvent) {
@@ -149,6 +157,9 @@ public class Controller {
 
     public void ButtonBack(ActionEvent actionEvent) {
         AnchorPaneAdmin.setVisible(false);
+    }
+
+    public void ButtonCopy(ActionEvent actionEvent) {
     }
 }
 
