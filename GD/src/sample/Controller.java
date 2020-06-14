@@ -45,7 +45,9 @@ public class Controller {
     public Button Exit;
     private boolean count = true;
     private boolean countPain=true;
-
+    private boolean textcount=false;
+    Pattern en = Pattern.compile("[a-z]*");
+    Pattern ru = Pattern.compile("[а-я]*");
     @FXML
     private void method(){
 
@@ -54,6 +56,18 @@ public class Controller {
             if (!p.matcher(newValue).matches()) TextFieldKey.setText(oldValue);
         });
     }
+//    @FXML
+//    private void methoda(){
+//if(!textcount){
+//    TextAreaInput.textProperty().addListener((observable, oldValue, newValue) -> {
+//        if (en.matcher(newValue).matches()) {
+//            textcount=true;
+//        }
+//    });
+//}
+//System.out.println(textcount);
+//System.out.println("");
+//    }
 
     public void ButtonLanguage(ActionEvent actionEvent) {
         if(count){
@@ -109,12 +123,22 @@ Exit.setText("Exit");
         int j=0;
         for(int i=0;i<TextAreaInput.getText().length();i++){
             if(str[i]==' ' || str[i]=='\n' || str[i]=='.') i++;
+            if(en.matcher(String.valueOf(str[i])).matches()){
             while(alfavitEn[j]!=str[i])
                 j++;
             int n=j-Integer.parseInt(TextFieldKey.getText());
             if(n<0)str[i]=alfavitEn[n+alfavitEn.length];
             else if(n<alfavitEn.length)
                 str[i]=alfavitEn[n];
+            }else{if(ru.matcher(String.valueOf(str[i])).matches()){
+                while(alfavitRu[j]!=str[i])
+                    j++;
+                int n=j-Integer.parseInt(TextFieldKey.getText());
+                if(n<0)str[i]=alfavitRu[n+alfavitRu.length];
+                else if(n<alfavitRu.length)
+                    str[i]=alfavitRu[n];
+            }}
+
             j=0;}
         TextAreaOutput.setText(String.valueOf(str));
     }
@@ -125,12 +149,24 @@ Exit.setText("Exit");
         int j=0;
         for(int i =0;i<TextAreaInput.getText().length(); i++){
             if(str[i]==' ' || str[i]=='\n' || str[i]=='.') i++;
+            if(en.matcher(String.valueOf(str[i])).matches()){
             while(alfavitEn[j]!=str[i])
                 j++;
-            int n=j+Integer.parseInt(TextFieldKey.getText());
-            if(n<alfavitEn.length)
-                str[i]=alfavitEn[n];
-            else str[i]=alfavitEn[n-alfavitEn.length];
+                int n=j+Integer.parseInt(TextFieldKey.getText());
+                if(n<alfavitEn.length)
+                    str[i]=alfavitEn[n];
+                else str[i]=alfavitEn[n-alfavitEn.length];
+            }else{
+                if(ru.matcher(String.valueOf(str[i])).matches()){
+                    while(alfavitRu[j]!=str[i])
+                        j++;
+                    int n=j+Integer.parseInt(TextFieldKey.getText());
+                    if(n<alfavitRu.length)
+                        str[i]=alfavitRu[n];
+                    else str[i]=alfavitRu[n-alfavitRu.length];
+                }
+            }
+
             j=0;
         }
         TextAreaOutput.setText(String.valueOf(str));
@@ -156,7 +192,9 @@ Exit.setText("Exit");
         r.writeBytes(TextAreaOutput.getText());
     }
 
-    public void ButtonAbout(ActionEvent actionEvent) {
+    public void ButtonAbout(ActionEvent actionEvent) throws IOException {
+        ProcessBuilder pb = new ProcessBuilder("Notepad.exe", "Опрограмме.txt");
+        pb.start();
     }
 
     public void ButtonHowTo(ActionEvent actionEvent) throws IOException {
