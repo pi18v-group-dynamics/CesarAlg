@@ -6,9 +6,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+
 import javafx.scene.layout.AnchorPane;
 
-import javafx.scene.paint.Paint;
+
 
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -18,6 +19,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.regex.Pattern;
+
+
 
 
 public class Controller {
@@ -56,18 +59,7 @@ public class Controller {
             if (!p.matcher(newValue).matches()) TextFieldKey.setText(oldValue);
         });
     }
-//    @FXML
-//    private void methoda(){
-//if(!textcount){
-//    TextAreaInput.textProperty().addListener((observable, oldValue, newValue) -> {
-//        if (en.matcher(newValue).matches()) {
-//            textcount=true;
-//        }
-//    });
-//}
-//System.out.println(textcount);
-//System.out.println("");
-//    }
+
 
     public void ButtonLanguage(ActionEvent actionEvent) {
         if(count){
@@ -122,22 +114,29 @@ Exit.setText("Exit");
         char[] str=TextAreaInput.getText().toLowerCase().toCharArray();
         int j=0;
         for(int i=0;i<TextAreaInput.getText().length();i++){
-            if(str[i]==' ' || str[i]=='\n' || str[i]=='.') i++;
-            if(en.matcher(String.valueOf(str[i])).matches()){
-            while(alfavitEn[j]!=str[i])
-                j++;
-            int n=j-Integer.parseInt(TextFieldKey.getText());
-            if(n<0)str[i]=alfavitEn[n+alfavitEn.length];
-            else if(n<alfavitEn.length)
-                str[i]=alfavitEn[n];
-            }else{if(ru.matcher(String.valueOf(str[i])).matches()){
-                while(alfavitRu[j]!=str[i])
-                    j++;
-                int n=j-Integer.parseInt(TextFieldKey.getText());
-                if(n<0)str[i]=alfavitRu[n+alfavitRu.length];
-                else if(n<alfavitRu.length)
-                    str[i]=alfavitRu[n];
-            }}
+
+            try {
+
+                if (en.matcher(String.valueOf(str[i])).matches()) {
+                    while (alfavitEn[j] != str[i])
+                        j++;
+                    int n = j - Integer.parseInt(TextFieldKey.getText());
+                    if (n < 0) str[i] = alfavitEn[n + alfavitEn.length];
+                    else if (n < alfavitEn.length)
+                        str[i] = alfavitEn[n];
+                } else {
+                    if (ru.matcher(String.valueOf(str[i])).matches()) {
+                        while (alfavitRu[j] != str[i])
+                            j++;
+                        int n = j - Integer.parseInt(TextFieldKey.getText());
+                        if (n < 0) str[i] = alfavitRu[n + alfavitRu.length];
+                        else if (n < alfavitRu.length)
+                            str[i] = alfavitRu[n];
+                    }
+                }
+            } catch (NumberFormatException e) {
+
+            }
 
             j=0;}
         TextAreaOutput.setText(String.valueOf(str));
@@ -148,25 +147,26 @@ Exit.setText("Exit");
         char[] str=TextAreaInput.getText().toLowerCase().toCharArray();
         int j=0;
         for(int i =0;i<TextAreaInput.getText().length(); i++){
-            if(str[i]==' ' || str[i]=='\n' || str[i]=='.') i++;
-            if(en.matcher(String.valueOf(str[i])).matches()){
-            while(alfavitEn[j]!=str[i])
+//            if(str[i]==' ' || str[i]=='\n' || str[i]=='.') i++;
+try {
+    if (en.matcher(String.valueOf(str[i])).matches()) {
+        while (alfavitEn[j] != str[i])
+            j++;
+        int n = j + Integer.parseInt(TextFieldKey.getText());
+        if (n < alfavitEn.length)
+            str[i] = alfavitEn[n];
+        else str[i] = alfavitEn[n - alfavitEn.length];
+    } else {
+        if (ru.matcher(String.valueOf(str[i])).matches()) {
+            while (alfavitRu[j] != str[i])
                 j++;
-                int n=j+Integer.parseInt(TextFieldKey.getText());
-                if(n<alfavitEn.length)
-                    str[i]=alfavitEn[n];
-                else str[i]=alfavitEn[n-alfavitEn.length];
-            }else{
-                if(ru.matcher(String.valueOf(str[i])).matches()){
-                    while(alfavitRu[j]!=str[i])
-                        j++;
-                    int n=j+Integer.parseInt(TextFieldKey.getText());
-                    if(n<alfavitRu.length)
-                        str[i]=alfavitRu[n];
-                    else str[i]=alfavitRu[n-alfavitRu.length];
-                }
-            }
-
+            int n = j + Integer.parseInt(TextFieldKey.getText());
+            if (n < alfavitRu.length)
+                str[i] = alfavitRu[n];
+            else str[i] = alfavitRu[n - alfavitRu.length];
+        }
+    }
+}catch (Exception e){}
             j=0;
         }
         TextAreaOutput.setText(String.valueOf(str));
@@ -234,8 +234,7 @@ Exit.setText("Exit");
         AnchorPaneAdmin.setVisible(false);
     }
 
-    public void ButtonCopy(ActionEvent actionEvent) {
-    }
+
 
     public void ButtonExit(ActionEvent event) {
         ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
