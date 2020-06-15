@@ -18,6 +18,8 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.Scanner;
 import java.util.regex.Pattern;
 
 
@@ -62,7 +64,7 @@ public class Controller {
     }
 
 
-    public void ButtonLanguage(ActionEvent actionEvent) {
+    public void ButtonLanguage(ActionEvent actionEvent) throws IOException {
         if (count) {
             button1.setText("Encrypt");
             razrab.setText("Developers: ");
@@ -74,7 +76,6 @@ public class Controller {
             rukovodstvo.setText("Guide");
             kluch.setText("Enter the key");
             button2.setText("Decrypt");
-            copy.setText("Copy");
             Exit.setText("Exit");
             log.setText("Logs");
             count = false;
@@ -89,12 +90,18 @@ public class Controller {
             oprogramme.setText("О программе");
             rukovodstvo.setText("Руководство");
             kluch.setText("Введите ключ");
-            copy.setText("Копировать");
             log.setText("Логи");
             Exit.setText("Выход");
             count = true;
         }
-
+        if(Autorization.IsUser) {
+            String text = "gosha изменил язык приложения\n\n";
+            Files.write(Paths.get("Логи.txt"), text.getBytes(), StandardOpenOption.APPEND);
+        }
+        else{
+            String text = "admin изменил язык приложения\n\n";
+            Files.write(Paths.get("Логи.txt"), text.getBytes(), StandardOpenOption.APPEND);
+        }
 
     }
 
@@ -179,9 +186,17 @@ public class Controller {
             }
             TextAreaOutput.setText(String.valueOf(str));
         }
+        if(Autorization.IsUser){
+            String text="Никнейм:gosha\nТип доступа:Пользователь\nДействие:Расшифровка\nКоличество символов "+TextAreaInput.getLength()+"\n\n";
+            Files.write(Paths.get("Логи.txt"), text.getBytes(), StandardOpenOption.APPEND);
+        }
+        else{
+            String text="Никнейм:admin\nТип доступа:Администратор\nДействие:Расшифровка\nКоличество символов "+TextAreaInput.getLength()+"\n\n";
+            Files.write(Paths.get("Логи.txt"), text.getBytes(), StandardOpenOption.APPEND);
+        }
     }
 
-    public void ButtonEncrypt(ActionEvent actionEvent) {
+    public void ButtonEncrypt(ActionEvent actionEvent) throws IOException {
         char[] str = TextAreaInput.getText().toLowerCase().toCharArray();
         int j = 0;
         for (int i = 0; i < TextAreaInput.getText().length(); i++) {
@@ -209,6 +224,14 @@ public class Controller {
             j = 0;
         }
         TextAreaOutput.setText(String.valueOf(str));
+        if(Autorization.IsUser){
+            String text="Никнейм:gosha\nТип доступа:Пользователь\nДействие:Зашифровка\nКоличество символов "+TextAreaInput.getLength()+"\n\n";
+            Files.write(Paths.get("Логи.txt"), text.getBytes(), StandardOpenOption.APPEND);
+        }
+        else{
+            String text="Никнейм:admin\nТип доступа:Администратор\nДействие:Зашифровка\nКоличество символов "+TextAreaInput.getLength()+"\n\n";
+            Files.write(Paths.get("Логи.txt"), text.getBytes(), StandardOpenOption.APPEND);
+        }
     }
 
     public void ButtonSelect(ActionEvent actionEvent) throws IOException {
@@ -242,7 +265,7 @@ public class Controller {
     }
 
 
-    public void ButtonColorSheme(ActionEvent actionEvent) {
+    public void ButtonColorSheme(ActionEvent actionEvent) throws IOException {
         if (countPain) {
             mainPane.getStylesheets().clear();
             pane1.setStyle("-fx-background-color: #2C2B2C");
@@ -260,9 +283,26 @@ public class Controller {
 
             countPain = true;
         }
+        if(Autorization.IsUser) {
+            String text = "gosha изменил цветовую схему\n\n";
+            Files.write(Paths.get("Логи.txt"), text.getBytes(), StandardOpenOption.APPEND);
+        }
+        else{
+            String text = "admin изменил цветовую схему\n\n";
+            Files.write(Paths.get("Логи.txt"), text.getBytes(), StandardOpenOption.APPEND);
+        }
     }
 
-    public void ButtonLogFile(ActionEvent actionEvent) {
+    public void ButtonLogFile(ActionEvent actionEvent) throws IOException {
+        TextAreaLog.clear();
+        Path path = Paths.get("Логи.txt");
+        Scanner scanner = new Scanner(path);
+
+        while(scanner.hasNextLine()){
+            String line = scanner.nextLine();
+            TextAreaLog.appendText(line+"\n");
+        }
+        scanner.close();
     }
 
     public void ButtonLogOpen(ActionEvent actionEvent) {

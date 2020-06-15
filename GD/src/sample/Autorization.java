@@ -22,6 +22,7 @@ import java.util.Scanner;
 public class Autorization {
     public TextField TFLogin;
     public TextField TFPassword;
+    public static boolean IsUser;
 
     public void ButtonLog(ActionEvent actionEvent) throws IOException {
 
@@ -52,6 +53,7 @@ public class Autorization {
             if(log.equals("admin")){
             Stage stage=new Stage();
             try {
+                IsUser=false;
                 start(stage,"AdminForm.fxml");
 
             } catch (Exception e) {
@@ -60,6 +62,7 @@ public class Autorization {
             }else{
                 Stage stage=new Stage();
                 try {
+                    IsUser=true;
                     start(stage,"MainForm.fxml");
 
                 } catch (Exception e) {
