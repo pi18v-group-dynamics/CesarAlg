@@ -127,17 +127,19 @@ public class Controller {
                         while (alfavitEn[j] != str[i])
                             j++;
                         int n = j - d;
-                        if (n < 0) str[i] = alfavitEn[n + alfavitEn.length];
-                        else if (n < alfavitEn.length)
-                            str[i] = alfavitEn[n];
+                        if (n < 0)
+                            while (n<0){
+                                n=n+alfavitEn.length;}
+                        str[i] = alfavitEn[n];
                     } else {
                         if (ru.matcher(String.valueOf(str[i])).matches()) {
                             while (alfavitRu[j] != str[i])
                                 j++;
                             int n = j -d;
-                            if (n < 0) str[i] = alfavitRu[n + alfavitRu.length];
-                            else if (n < alfavitRu.length)
-                                str[i] = alfavitRu[n];
+                            if (n < 0)
+                                while (n<0){
+                                    n=n+alfavitRu.length;}
+                            str[i] = alfavitRu[n];
                         }
                     }
                 } catch (NumberFormatException e) {
@@ -165,17 +167,19 @@ public class Controller {
                         while (alfavitEn[j] != str[i])
                             j++;
                         int n = j - Integer.parseInt(TextFieldKey.getText());
-                        if (n < 0) str[i] = alfavitEn[n + alfavitEn.length];
-                        else if (n < alfavitEn.length)
-                            str[i] = alfavitEn[n];
+                        if (n < 0)
+                            while (n<0){
+                                n=n+alfavitEn.length;}
+                        str[i] = alfavitEn[n];
                     } else {
                         if (ru.matcher(String.valueOf(str[i])).matches()) {
                             while (alfavitRu[j] != str[i])
                                 j++;
                             int n = j - Integer.parseInt(TextFieldKey.getText());
-                            if (n < 0) str[i] = alfavitRu[n + alfavitRu.length];
-                            else if (n < alfavitRu.length)
-                                str[i] = alfavitRu[n];
+                            if (n < 0)
+                                while (n<0){
+                                    n=n+alfavitRu.length;}
+                            str[i] = alfavitRu[n];
                         }
                     }
                 } catch (NumberFormatException e) {
@@ -274,6 +278,11 @@ public class Controller {
 
             mainPane.getStylesheets().add("style.css");
             countPain = false;
+            try {
+                AnchorPaneAdmin.setStyle("-fx-background-color: #2C2B2C");
+            } catch (Exception e) {
+//                e.printStackTrace();
+            }
         } else {
             pane1.setStyle("-fx-background-color: #F5F4F6");
 
@@ -282,6 +291,11 @@ public class Controller {
             mainPane.getStylesheets().clear();
 
             countPain = true;
+            try {
+                AnchorPaneAdmin.setStyle("-fx-background-color: #F5F4F6");
+            } catch (Exception e) {
+//                e.printStackTrace();
+            }
         }
         if(Autorization.IsUser) {
             String text = "gosha изменил цветовую схему\n\n";
