@@ -5,6 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.control.PasswordField?>
 
 
 <AnchorPane prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Autorization">
@@ -20,6 +21,6 @@
          </font>
       </Label>
       <TextField fx:id="TFLogin" layoutX="76.0" layoutY="61.0" promptText="Логин" />
-      <TextField fx:id="TFPassword" layoutX="76.0" layoutY="100.0" promptText="Пароль" />
+      <PasswordField fx:id="TFPassword" layoutX="76.0" layoutY="100.0" promptText="Пароль" />
    </children>
 </AnchorPane>
